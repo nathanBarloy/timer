@@ -10,21 +10,21 @@
 double gettime();
 
 
-struct _timer_t {
+struct _stimer_t {
     double start_time;
     double stop_time;
     bool stopped;
 };
-typedef struct _timer_t timer_t;
+typedef struct _stimer_t stimer_t;
 
 
-timer_t *init_timer();
-void free_timer(timer_t *timer);
+stimer_t *init_stimer();
+void free_stimer(stimer_t *timer);
 
-void reset_timer(timer_t *timer);
-void start_timer(timer_t *timer);
-void stop_timer(timer_t *timer);
-double get_timer_time(timer_t *timer);
+void reset_stimer(stimer_t *timer);
+void start_stimer(stimer_t *timer);
+void stop_stimer(stimer_t *timer);
+double get_stimer_time(stimer_t *timer);
 
 
 #endif

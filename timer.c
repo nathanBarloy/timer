@@ -15,40 +15,40 @@ double gettime() {
 }
 
 
-timer_t *init_timer() {
-    timer_t *timer = malloc(sizeof(*timer));
+stimer_t *init_stimer() {
+    stimer_t *timer = malloc(sizeof(*timer));
     if (timer == NULL) {
         fprintf(stderr, "Error while allocating.");
         exit(1);
     }
-    reset_timer(timer);
+    reset_stimer(timer);
     return timer;
 }
 
-void free_timer(timer_t *timer) {
+void free_stimer(stimer_t *timer) {
     free(timer);
 }
 
 
-void reset_timer(timer_t *timer) {
+void reset_stimer(stimer_t *timer) {
     timer->start_time = 0.;
     timer->stop_time = 0.;
     timer->stopped = true;
 }
 
-void start_timer(timer_t *timer) {
+void start_stimer(stimer_t *timer) {
     if (timer->stopped) {
         timer->start_time = gettime() - timer->stop_time + timer->start_time;
         timer->stopped = false;
     }
 }
 
-void stop_timer(timer_t *timer) {
+void stop_stimer(stimer_t *timer) {
     timer->stop_time = gettime();
     timer->stopped = true;
 }
 
-double get_timer_time(timer_t *timer) {
+double get_stimer_time(stimer_t *timer) {
     if (timer->stopped) {
         return timer->stop_time - timer->start_time;
     } else {
