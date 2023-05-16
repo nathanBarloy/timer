@@ -1,5 +1,5 @@
-#ifndef TIMER_H
-#define TIMER_H
+#ifndef STIMER_H
+#define STIMER_H
 
 #include <stdbool.h>
 #include <sys/time.h>

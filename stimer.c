@@ -3,7 +3,7 @@
 #include <stdbool.h>
 #include <sys/time.h>
 
-#include "timer.h"
+#include "stimer.h"
 
 
 double gettime() {
